@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    top: 50px;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+
+    .content-wrapper {
+        max-width: 450px;
+        background: #fff;
+        padding: 15px;
+        position: relative;
+
+        p {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+    }
+}
+
+.badge-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+
+    .badge {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 8px 0;
+        border: 1px solid #9a9898;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        svg.checker {
+            fill: #025e02;
+        }
+
+        svg {
+            fill: #9a9898;
+        }
+
+        svg.arrow.rotate {
+            transform: rotate(90deg);
+        }
+
+        &:hover svg {
+            fill: #fff;
+        }
+
+        .status {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+        }
+    } 
+
+    .badge.active {
+        background: #000;
+        color: #fff;
+
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
+.badge-info {
+    display: none;
+    background: #e3e0e041;
+    margin-top: 10px;
+    padding: 20px;
+
+    .information {
+        text-align: justify;
+    }
+
+    .info-title {
+        text-align: right;
+    }
+}
+
+.badge-info.show {
+     animation: animate 2s linear reverse,;
+    display: block;
+}
+
+
+@keyframes animate {
+    0% {
+       transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+       transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
